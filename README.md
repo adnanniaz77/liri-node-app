@@ -8,14 +8,17 @@
 <ul>
     <li>LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.</li>
     <li>Make a new GitHub repository called liri-node-app and clone it to your computer.</li>
-    <li>To retrieve the data that will power this app, you'll need to send requests using the axios package to the Bands in Town, Spotify and OMDB APIs. You'll find these Node packages crucial for your assignment.</li>
-    <li><a href="https://www.npmjs.com/package/node-spotify-api">Node-Spotify-API</a></li>
+    <li>To retrieve the data that will power this app, you'll need to send requests using the axios package to the Bands in Town, Spotify and OMDB APIs. You'll find these Node packages crucial for your assignment.
+        <ul>
+            <li><a href="https://www.npmjs.com/package/node-spotify-api">Node-Spotify-API</a></li>
     <li>
         <a href="https://www.npmjs.com/package/axiosv">Axios</a>
         <ul><li>You'll use Axios to grab data from the <a href="http://www.omdbapi.com/">OMDB API</a> and the <a href="https://www.artists.bandsintown.com/login">Bands In Town API</a></li></ul>
     </li>
     <li><a href="https://www.npmjs.com/package/moment">Moment</a></li>
     <li><a href="https://www.npmjs.com/package/dotenv">DotEnv</a></li>
+        </ul>
+    </li>
 </ul>
 
 
