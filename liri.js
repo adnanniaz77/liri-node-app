@@ -1,26 +1,24 @@
 require("dotenv").config();
-let keys = require("./keys.js");
-// var spotify = new Spotify(keys.spotify);
-
-const fs = require('fs');
-const moment = require('moment');
-const chalk = require('chalk');
 const axios = require('axios');
+
+let keys = require("./keys.js");
+var spotifyKeyInfo = new Spotify(keys.spotify);
+let Spotify = require('spotify');
 
 
 
 // //////////////////////////////
-// bandName = "kiss"
-// var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=[key]";
-// console.log(queryURL); 
+bandName = "pink floyd"
+var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=[key]";
+console.log(queryURL); 
 
-// axios.get(queryURL).then(
-//     function(bandResponse){
-//         console.log("Venue: " + bandResponse.data[0].venue.name);
-//         console.log("City: " + bandResponse.data[0].venue.city);
-//         console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
-//     }
-// );
+axios.get(queryURL).then(
+    function(bandResponse){
+        console.log("Venue: " + bandResponse.data[0].venue.name);
+        console.log("City: " + bandResponse.data[0].venue.city);
+        // console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
+    }
+);
 
 
 // ///////////////////////////////
@@ -28,6 +26,8 @@ const axios = require('axios');
 //     id: spotifyKeyInfo["spotify"].id,
 //     secret: spotifyKeyInfo["spotify"].secret
 // });
+
+// let songName = "hey baby";
 
 // spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function(error, songResponse) {
 //     if (error){
@@ -39,6 +39,8 @@ const axios = require('axios');
 //     console.log("Album: " + songResponse.tracks.items[0].album.name);
 // });
 
+
+//=============================================================
 function getMovieInfo(movieName) {
     const apiKey = "7d74346a";
     var queryURL = `http://www.omdbapi.com/?t=" + ${movieName} + "&y=&plot=short&apikey=${apiKey}`;
