@@ -1,9 +1,10 @@
-require("dotenv").config();
-const axios = require('axios');
-
-let keys = require("./keys.js");
-var spotifyKeyInfo = new Spotify(keys.spotify);
-let Spotify = require('spotify');
+require('dotenv').config({ path: './.env' })
+let chalk = require('chalk');
+var axios = require("axios");
+let Spotify = require('node-spotify-api');
+let dotenv = require('dotenv'); 
+let fs = require('fs'); 
+let keys = require('./key.js');
 
 
 
