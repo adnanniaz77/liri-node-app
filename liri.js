@@ -4,10 +4,24 @@ var axios = require("axios");
 let Spotify = require('node-spotify-api');
 let dotenv = require('dotenv'); 
 let fs = require('fs'); 
-let keys = require('./key.js');
+let keys = require('./keys.js');
 
 
+// concert-this
+function concert(bandName) {
+        var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp";
+        console.log(queryURL); 
+        axios.get(queryURL).then(
+            function(bandResponse){
+            console.log("Venue: " + bandResponse.data[0].venue.name);
+            console.log("City: " + bandResponse.data[0].venue.city);
+            console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
+            }
+        );
+    }  
 
+    
+// movie-this
 function movie(movieName) {
     let movieKeyword = keys.imdb.key;
     let queryUrl =  `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=${movieKeyword}`;
@@ -25,6 +39,7 @@ function movie(movieName) {
 }
 
 
+// spotify-this-song
 function spotify(song) { 
 
     let myid = keys.spotify.id;
@@ -53,11 +68,31 @@ function spotify(song) {
 }
 
 
+// do-what-it-says
+function random() {
+        fs.readFile("./random.txt", "UTF8", function (err, data) {
+            let ramChoices = data.split(", ")
+            let command = Math.floor((Math.random() * 3)) 
+            let choice = Math.floor((Math.random() * ramChoices.length)) 
+            if (command == 0) {
+                movie(ramChoices[choice]);
+            }
+            else if (command == 1) {
+                spotify(ramChoices[choice]);
+            }
+            else if (command == 2) {
+                concert();
+            }
+        });
+    }
 
+
+// user files and path
 let action = process.argv[2];
 let variable = process.argv[3];
 
 
+// choices available
 if (action == "movie-this") {
     if (variable == undefined) { variable = 'Mr. Nobody' } else { variable = process.argv[3]; }
     movie(variable);
