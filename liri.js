@@ -71,8 +71,18 @@ function spotify(song) {
 // do-what-it-says
 function random() {
         fs.readFile("./random.txt", "UTF8", function (err, data) {
-            let ramChoices = data.split(",")
-            spotify();
+            let ramChoices = data.split(", ")
+            let command = Math.floor((Math.random() * 3)) 
+            let choice = Math.floor((Math.random() * ramChoices.length)) 
+            if (command == 0) {
+                movie(ramChoices[choice]);
+            }
+            else if (command == 1) {
+                spotify(ramChoices[choice]);v
+            }
+            else if (command == 2) {
+                concert();
+            }
         });
     }
 

@@ -22,6 +22,13 @@
     <li>spotify</li>
 </ul>
 
+<h3>Installation guide</h3>
+
+<ol>
+    <li>run <code>npm install</code></li>
+    <li>provide your own spotify id & secrete and in the dotenv file</li>
+    <li>provide you own OMDB api key</li>
+</ol>
 
 <h2 style='text-align:center'>Visual walk-through</h2>
 
