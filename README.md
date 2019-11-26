@@ -33,14 +33,14 @@
 <h2>Require & Local Linked files</h2>
 LIRI required installation of several npm packages and links to local files.<br>
 
-<code>
+<pre><code>
 require("dotenv").config(); <br>
 var fs = require("fs"); <br>
 var moment = require("moment");<br>
 var axios = require("axios");<br>
 var Spotify = require("node-spotify-api");<br>
 var spotifyKeyInfo = require("./keys.js");</h2>
-</code>
+</code></pre>
 
 <h2 style='text-align:center'>Visual walk-through</h2>
 
