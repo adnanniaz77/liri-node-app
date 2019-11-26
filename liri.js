@@ -24,3 +24,54 @@ function movie(movieName) {
         });
 }
 
+
+function spotify(song) { 
+
+    let myid = keys.spotify.id;
+    let mysecret = keys.spotify.secret;
+
+    let spotify = new Spotify({
+        id: myid,
+        secret: mysecret
+    });
+    spotify.search({
+        type: 'track',
+        query: song,
+        limit: 10
+    }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        } else {
+            console.log('\n' +
+            chalk.cyan.underline("Artist(s) Name: ").padEnd(28) + data.tracks.items[0].album.artists[0].name + '\n' +
+            chalk.cyan.underline("Song Title: ").padEnd(28) + data.tracks.items[0].name + '\n' +
+            chalk.cyan.underline("Preview: ").padEnd(28) + data.tracks.items[0].preview_url + '\n' +
+            chalk.cyan.underline("Album Title: ").padEnd(28) + data.tracks.items[0].album.name
+            );
+        }
+    });
+}
+
+
+
+let action = process.argv[2];
+let variable = process.argv[3];
+
+
+if (action == "movie-this") {
+    if (variable == undefined) { variable = 'Mr. Nobody' } else { variable = process.argv[3]; }
+    movie(variable);
+} 
+else if (action == "spotify-this-song") { 
+    if (variable == undefined) { variable = 'dark horse' } else { variable = process.argv[3]; }
+    spotify(variable);
+}
+else if (action == "concert-this") {
+    concert();
+}
+else if (action == "do-what-it-says") {
+    random();
+}
+else {
+    console.log("Probably spelling mistake, check your spellings?");
+}
