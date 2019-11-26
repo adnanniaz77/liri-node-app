@@ -2,6 +2,7 @@ require('dotenv').config({ path: './.env' })
 let chalk = require('chalk');
 var axios = require("axios");
 let Spotify = require('node-spotify-api');
+let moment = require('moment');
 let dotenv = require('dotenv'); 
 let fs = require('fs'); 
 let keys = require('./keys.js');
@@ -9,18 +10,19 @@ let keys = require('./keys.js');
 
 // concert-this
 function concert(bandName) {
-        var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=codingbootcamp";
+        var queryURL = `https://rest.bandsintown.com/artists/${bandName}/events?app_id=codingbootcamp`;
         console.log(queryURL); 
+        console.log(bandName);
         axios.get(queryURL).then(
-            function(bandResponse){
-            console.log("Venue: " + bandResponse.data[0].venue.name);
-            console.log("City: " + bandResponse.data[0].venue.city);
-            console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
-            }
+            // function(bandResponse){
+            // console.log("Venue: " + bandResponse.data[0].venue.name);
+            // console.log("City: " + bandResponse.data[0].venue.city);
+            // console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
+            // }
         );
     }  
 
-    
+
 // movie-this
 function movie(movieName) {
     let movieKeyword = keys.imdb.key;
@@ -102,7 +104,8 @@ else if (action == "spotify-this-song") {
     spotify(variable);
 }
 else if (action == "concert-this") {
-    concert();
+    if (variable == undefined) { variable = 'metallica' } else { variable = process.argv[3]; }
+    concert(variable);
 }
 else if (action == "do-what-it-says") {
     random();
