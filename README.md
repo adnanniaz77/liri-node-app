@@ -26,16 +26,18 @@
 <h2 style='text-align:center'>Visual walk-through</h2>
 
 <code>node liri.js movie-this</code>
-<img src="./runApp/img1.jpg>
+<img src="./runApp/img1.jpg">
 
 <code>node liri.js movie-this 'fight club</code>
-<img src="./runApp/img2.jpg>
+<img src="./runApp/img2.jpg">
 
 <code>node liri.js concert-this</code>
-<img src="./runApp/spotify-this.jpg>
+<img src="./runApp/concert-this.jpg">
 
-<code>node liri.js concert-this ' </code>
-<img src="./runApp/spotify-this.jpg>
+<code>node liri.js concert-this</code>
+<img src="./runApp/concert-this-keyword.jpg">
+
+
 
 
 
