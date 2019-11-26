@@ -8,55 +8,19 @@ let keys = require('./key.js');
 
 
 
-// //////////////////////////////
-bandName = "pink floyd"
-var queryURL = "https://rest.bandsintown.com/artists/" + bandName + "/events?app_id=[key]";
-console.log(queryURL); 
+function movie(movieName) {
+    let movieKeyword = keys.imdb.key;
+    let queryUrl =  `http://www.omdbapi.com/?t=${movieName}&y=&plot=short&apikey=${movieKeyword}`;
 
-axios.get(queryURL).then(
-    function(bandResponse){
-        console.log("Venue: " + bandResponse.data[0].venue.name);
-        console.log("City: " + bandResponse.data[0].venue.city);
-        // console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
-    }
-);
-
-
-// ///////////////////////////////
-// var spotify = new Spotify({
-//     id: spotifyKeyInfo["spotify"].id,
-//     secret: spotifyKeyInfo["spotify"].secret
-// });
-
-// let songName = "hey baby";
-
-// spotify.request('https://api.spotify.com/v1/search?q=track:' + songName + '&type=track&limit=10', function(error, songResponse) {
-//     if (error){
-//         return console.log(error);
-//     }
-//     console.log("Artist: " + songResponse.tracks.items[0].artists[0].name);
-//     console.log("Song: " + songResponse.tracks.items[0].name);
-//     console.log("URL: " + songResponse.tracks.items[0].preview_url);
-//     console.log("Album: " + songResponse.tracks.items[0].album.name);
-// });
-
-
-//=============================================================
-function getMovieInfo(movieName) {
-    const apiKey = "7d74346a";
-    var queryURL = `http://www.omdbapi.com/?t=" + ${movieName} + "&y=&plot=short&apikey=${apiKey}`;
-
-    axios.get(queryURL).then(
-    function(movieResponse){
-        // console.log(movieResponse)
-        console.log("Title: " + movieResponse.data.Title);
-        console.log("Year: " + movieResponse.data.Year);
-        console.log("Rated: " + movieResponse.data.imdbRating);
-        console.log("Country: " + movieResponse.data.Country);
-        console.log("Language: " + movieResponse.data.Language);
-        console.log("Plot: " + movieResponse.data.Plot);
-        console.log("Actors: " + movieResponse.data.Actors);
-        console.log("Rotten Tomatoes: " + movieResponse.data.Ratings[1].Value);
-    }
-);
+    axios.get(queryUrl).then(
+        function(response){
+            console.log(chalk.cyan.underline("Title: ") + chalk.yellow(response.data.Title));
+            console.log(chalk.cyan.underline("Year: ") + chalk.yellow(response.data.Year));
+            console.log(chalk.cyan.underline("Rated: ") + chalk.yellow(response.data.imdbRating));
+            console.log(chalk.cyan.underline("Country: ") + chalk.yellow(response.data.Country));
+            console.log(chalk.cyan.underline("Language: ") + chalk.yellow(response.data.Language));
+            console.log(chalk.cyan.underline("Plot: ") + chalk.yellow(response.data.Plot));
+            console.log(chalk.cyan.underline("Actors: ") + chalk.yellow(response.data.Actors));
+        });
 }
+
