@@ -11,14 +11,12 @@ let keys = require('./keys.js');
 // concert-this
 function concert(bandName) {
         var queryURL = `https://rest.bandsintown.com/artists/${bandName}/events?app_id=codingbootcamp`;
-        console.log(queryURL); 
-        console.log(bandName);
         axios.get(queryURL).then(
-            // function(bandResponse){
-            // console.log("Venue: " + bandResponse.data[0].venue.name);
-            // console.log("City: " + bandResponse.data[0].venue.city);
-            // console.log(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY"));
-            // }
+            function(bandResponse){
+            console.log(chalk.cyan.underline("Venue: ") + chalk.yellow(bandResponse.data[0].venue.name));
+            console.log(chalk.cyan.underline("City: ") + chalk.yellow(bandResponse.data[0].venue.city));
+            console.log(chalk.cyan.underline("Date: ") + chalk.yellow(moment(bandResponse.data[0].datetime).format("MM/DD/YYYY")));
+            }
         );
     }  
 
