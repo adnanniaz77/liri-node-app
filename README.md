@@ -42,4 +42,33 @@ var Spotify = require("node-spotify-api");<br>
 var spotifyKeyInfo = require("./keys.js");</h2>
 </code></pre>
 
-<h2 style='text-align:center'><a href="https://drive.google.com/file/d/1pH_UW2Q5wHKsA0pCWo0RtfhsrOzgLUaG/view?usp=sharing">Visual walk-through</a></h2>
+<h2><a href="https://drive.google.com/file/d/1pH_UW2Q5wHKsA0pCWo0RtfhsrOzgLUaG/view?usp=sharing">Click here to see Video walk-through </a></h2>
+
+<h2>Below are Demo Images</h2>
+
+<h3>concert-this</h3>
+<img src="./runApp/concert-this.jpg">
+
+<br><br>
+<h3>concert-this bandName</h3>
+<img src="./runApp/concert-this-keyword.jpg">
+
+<br><br>
+<h3>spotify-this-song</h3>
+<img src="./runApp/spotify-this.jpg">
+
+<br><br>
+<h3>spotify-this-song songName</h3>
+<img src="./runApp/spotify-this-keyword.jpg">
+
+<br><br>
+<h3>movie-this</h3>
+<img src="./runApp/img1.jpg">
+
+<br><br>
+<h3>movie-this movieName</h3>
+<img src="./runApp/img2.jpg">
+
+<br><br>
+<h3>do-what-it-says</h3>
+<img src="./runApp/do-what-says.jpg">
