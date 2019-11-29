@@ -100,10 +100,6 @@ function random() {
     
 }
 
-
-
-
-
 // user files and path
 let action = process.argv[2];
 let variable = process.argv[3];

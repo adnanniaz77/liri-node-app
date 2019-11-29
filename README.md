@@ -44,19 +44,9 @@ var spotifyKeyInfo = require("./keys.js");</h2>
 
 <h2 style='text-align:center'>Visual walk-through</h2>
 
-<code>node liri.js movie-this</code>
-<img src="./runApp/img1.jpg">
-
-<code>node liri.js movie-this 'fight club</code>
-<img src="./runApp/img2.jpg">
-
-<code>node liri.js concert-this</code>
-<img src="./runApp/concert-this.jpg">
-
-<code>node liri.js concert-this</code>
-<img src="./runApp/concert-this-keyword.jpg">
-
-
+<video width="400" controls>
+  <source src="./runApp/liriApp.mp4" type="video/mp4">
+</video>
 
 
 
