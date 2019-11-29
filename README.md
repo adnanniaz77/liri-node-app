@@ -42,13 +42,4 @@ var Spotify = require("node-spotify-api");<br>
 var spotifyKeyInfo = require("./keys.js");</h2>
 </code></pre>
 
-<h2 style='text-align:center'>Visual walk-through</h2>
-
-<video width="400" controls>
-  <source src="./runApp/liriApp.mp4" type="video/mp4">
-</video>
-
-
-
-
-
+<h2 style='text-align:center'><a href="https://drive.google.com/file/d/1pH_UW2Q5wHKsA0pCWo0RtfhsrOzgLUaG/view?usp=sharing">Visual walk-through</a></h2>
