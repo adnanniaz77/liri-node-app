@@ -67,25 +67,6 @@ function spotify(song) {
     });
 }
 
-
-// do-what-it-says
-// function random() {
-
-//     fs.readFile("./random.txt", "UTF8", function (err, data) {
-//         return userCmd = data.split(",");
-
-//         //
-        
-//         //
-
-//     });
-    
-// }
-
-
-
-
-
 function random() { 
 
 
