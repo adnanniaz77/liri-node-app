@@ -33,8 +33,9 @@
 <h2>Require & Local Linked files</h2>
 LIRI required installation of several npm packages and links to local files.<br>
 
+<pre>
 <code>
-require("dotenv").config(); <br>
+require("dotenv").config();
 var fs = require("fs"); <br>
 var moment = require("moment");<br>
 var axios = require("axios");<br>
@@ -42,6 +43,7 @@ var Spotify = require("node-spotify-api");<br>
 var spotifyKeyInfo = require("./keys.js");<br>
 var chalk = require("chalk");</h2>
 </code>
+</pre>
 
 <h2><img src="./runApp/point-right.png">&nbsp;&nbsp;&nbsp;&nbsp;<img src="./runApp/video.png"> &nbsp;<a href="https://drive.google.com/file/d/1pH_UW2Q5wHKsA0pCWo0RtfhsrOzgLUaG/view?usp=sharing"><u>Click here to see Video walk-through</u></a></h2>
 
